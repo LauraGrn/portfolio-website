@@ -5,11 +5,11 @@ import ScrollAnimation from "react-animate-on-scroll";
 export default class Hello extends Component {
   render() {
     return (
-      <div className="hello">
+      <div className="hello" ref={this.props.innerRef}>
         <ScrollAnimation
           animateIn="bounceInRight"
           animateOut="bounceOutLeft"
-          delay={1000}
+          delay={6000}
         >
           <h1>
             <svg width={428} height={343} viewBox="0 0 428.83 343.87">

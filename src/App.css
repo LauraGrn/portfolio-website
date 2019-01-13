@@ -1,17 +1,39 @@
-.banner {
-  background: #ee4266;
+.banner_container {
+  top: 0px;
+  left: 0px;
   height: 100vh;
   width: 100vw;
+  background-color: #f7ebe8;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner {
+  background: #ff6978;
+  height: 100vh;
+  width: 100%;
+}
+
+.banner-right {
+  height: 100vh;
+  width: 0%;
+  background-color: #f7ebe8;
+}
+
+.banner-right.loaded {
+  height: 100vh;
+  width: 50%;
+  background-color: #f7ebe8;
+  transition: border 1000ms ease, width 1500ms ease;
 }
 
 .banner.loaded {
-  background: #ee4266;
-  height: 80vh;
+  background: #ff6978;
+  height: 100vh;
   width: 50%;
-  transition: margin 1000ms ease, width 1500ms ease;
-  margin: 0px 50px 0px 50px;
-  z-index: 1;
-  position: absolute;
+  transition: border 1000ms ease, width 1500ms ease;
 }
 
 .navigation {
@@ -30,22 +52,20 @@
   background: #ffffff;
 }
 
-.banner_container {
-  top: 0px;
-  left: 0px;
-  height: 100vh;
-  width: 100vw;
-  background-color: #f8f8f8;
-  z-index: 1;
-}
-
 .hello {
   position: absolute;
-  z-index: 2;
+  z-index: 7;
   top: 30vh;
   left: 40%;
+  display: inline;
 }
 
+.hellotwo {
+  position: absolute;
+  z-index: 7;
+
+  display: inline;
+}
 @media (min-width: 1600px) {
   .hello h1 {
     font-size: 22rem;
@@ -66,7 +86,7 @@
 
 h1 {
   line-height: 0.6;
-  font-family: "Gilroy", sans-serif;
+  font-family: "akzidenz-grotesk,sans-serif";
   font-weight: 900;
   margin: 0px;
   text-transform: uppercase;
@@ -90,7 +110,7 @@ svg {
 }
 
 .dot {
-  fill: #ff5851;
+  fill: #f26c65;
 }
 
 .page-home.showHello section.hello .hello-scrolldown {
@@ -129,8 +149,27 @@ svg {
     opacity 250ms linear 0ms;
 }
 
-.foo {
-  margin-top: 100vh;
+.future {
+  /* margin-top: 200vh; */
+  transform: matrix3d(
+    0.984724,
+    -0.0772946,
+    0.156026,
+    0,
+    0.078253,
+    0.996934,
+    0,
+    0,
+    -0.155548,
+    0.0122095,
+    0.987753,
+    0,
+    0,
+    0,
+    0,
+    1
+  );
+  z-index: 20;
 }
 
 .hello-container {
@@ -139,17 +178,291 @@ svg {
 }
 
 .test {
+  top: 30vh;
+  left: 20px;
   height: 150px;
   width: 150px;
-  top: 0;
-  left: 0;
   background-color: hsl(135, 100%, 66%);
   position: absolute;
+  margin-top: 20px;
 }
 
 .element-move-horizontal_container {
-  width: 500px;
-  background-color: #1c1b20;
+  max-width: 1000px;
+  background-color: #ef6487;
   position: relative;
+  min-height: 70vh;
+  z-index: 10;
+}
+
+.scrolling-wrapper {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+
+  border: 2px solid var(--gs0);
+  border-radius: 8px;
+  height: 33vh;
+}
+
+.scrolling-wrapper div {
+  scroll-snap-align: start;
+
+  height: 33vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+.scrolling-wrapper div:nth-child(1) {
+  background: hotpink;
+  color: white;
+}
+.scrolling-wrapper div:nth-child(2) {
+  background: azure;
+}
+.scrolling-wrapper div:nth-child(3) {
+  background: blanchedalmond;
+}
+.scrolling-wrapper div:nth-child(4) {
+  background: lightcoral;
+  color: white;
+}
+
+.content-block {
+  width: 100%;
+  right: 0;
+  top: 0px;
+  position: absolute;
+  background-color: transparent;
+  height: 100vh;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  transition: left 1000ms ease;
+}
+
+.content-1 {
+  background: #4e937a;
+  width: 50%;
+}
+
+.content-2 {
+  background: #1c3144;
+  width: 50%;
+}
+
+.static-left {
+  background-color: #ef6487;
+  width: 50%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 4;
+  height: 3000px;
+}
+
+.scroll-container {
+  width: 100%;
+  background-color: #ef6487;
+  position: relative;
+  height: 100vh;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.foo {
+  display: block;
+  width: 100vh;
+  height: 100vh;
+  background-color: #c68866;
+}
+
+/* SVG learning Text animation */
+
+.svg-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+
+.text {
+  font-family: "Abril Fatface", cursive;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  text-align: center;
+}
+
+.text-1 {
+  font-size: 90px;
+}
+
+svg.go {
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+
+.text-stroke {
+  fill: none;
+  stroke: #f7ebe8;
+  stroke-width: 2.8px;
+  stroke-dashoffset: -900;
+  stroke-dasharray: 900;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  animation: dash 2s ease-in-out forwards;
+}
+.text-stroke:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.text-stroke:nth-child(3) {
+  animation-delay: 1s;
+}
+.text-stroke-2 {
+  stroke: #ffffff;
+  animation-delay: 1.3s;
+}
+.text-stroke:nth-child(5) {
+  animation-delay: 1.6s;
+}
+.text-stroke:nth-child(6) {
+  animation-delay: 1.9s;
+}
+
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* SVG Path animation */
+
+path {
+  stroke: #ff6978;
+  stroke-dasharray: 2863;
+  opacity: 10;
+  animation: dash 5s ease-in-out;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 2863;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.test-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+}
+
+/* Scroll down animation */
+
+.anim-arrow {
+  bottom: 40px;
+  left: 5%;
+  width: 18px;
+  height: 40px;
+  cursor: pointer;
+  opacity: 0;
+  animation: opacity-in 1.5s ease-in-out 3.5s forwards;
+  position: absolute;
+  z-index: 20;
+}
+
+.tri-1 {
+  animation: tri-anim 2.5s ease-in-out 0s infinite;
+  width: 100%;
+  height: 18px;
+  border: solid #ffffff;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 1px;
+  transform: rotate(45deg);
+  position: absolute;
+}
+.tri-2 {
+  animation: tri-anim 2.5s ease-in-out 0.25s infinite;
+  width: 100%;
+  height: 18px;
+  border: solid #ffffff;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 1px;
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+@keyframes tri-anim {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  10% {
+    top: 0;
+    opacity: 1;
+  }
+
+  75% {
+    top: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* test */
+
+.ufo {
+  width: 500px;
   height: 500px;
+  cursor: pointer;
+  border: solid 1px black;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.eyes {
+  width: 3px;
+  height: 500px;
+  background: linear-gradient(purple, orange);
+}
+
+.swing_container {
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f7ebe8;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.swingloaded {
+  background: #ff6978;
+  height: 100vh;
+  width: 50%;
+  transition: border 1000ms ease, width 1500ms ease;
+}
+
+.swing-rightloaded {
+  height: 100vh;
+  width: 50%;
+  background-color: #f7ebe8;
+  transition: border 1000ms ease, width 1500ms ease;
 }

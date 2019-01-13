@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "animate.css/animate.min.css";
-import BannerBox from "components/bannerbox";
-import Foo from "components/foo";
+import Banner from "components/banner.js";
+import Scroll from "components/scroll.js";
 
 export default class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <BannerBox />
-        <Foo />
+        <Banner />
+        <Scroll />
       </React.Fragment>
     );
   }
