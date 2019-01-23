@@ -1,4 +1,4 @@
-.banner_container {
+/* .banner_container {
   top: 0px;
   left: 0px;
   height: 100vh;
@@ -8,8 +8,8 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-}
-
+} */
+/* 
 .banner {
   background: #ff6978;
   height: 100vh;
@@ -34,23 +34,35 @@
   height: 100vh;
   width: 50%;
   transition: border 1000ms ease, width 1500ms ease;
-}
+} */
 
-.navigation {
+/* const Wrapper = styled.div`
+  height: 0px;
+  overflow: hidden;
+
+  ${props => props.show && css`
+    // Only if it's showing
+  `}
+
+  // li {
+
+  // }
+`; */
+/* .navigation {
   height: 0px;
   overflow: hidden;
 }
 
 .navigation.show {
-  height: 50px;
+  height: 3%;
   width: 100vw;
   top: 0px;
   left: 0px;
   transition: height 1000ms ease;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   background: #ffffff;
-}
+} */
 
 .hello {
   position: absolute;
@@ -231,9 +243,9 @@ svg {
 
 .content-block {
   width: 100%;
-  right: 0;
+  /* right: 0;
   top: 0px;
-  position: absolute;
+  position: absolute; */
   background-color: transparent;
   height: 100vh;
   z-index: 3;
@@ -342,7 +354,7 @@ svg.go {
 
 /* SVG Path animation */
 
-path {
+path.automatic {
   stroke: #ff6978;
   stroke-dasharray: 2863;
   opacity: 10;

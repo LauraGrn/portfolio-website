@@ -1,13 +1,48 @@
+import styled, { css } from "styled-components";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-const view_element_class = "show";
+const Wrapper = styled.div`
+  height: 0px;
+  overflow: hidden;
+
+  ${props =>
+    props.show &&
+    css`
+      height: 3%;
+      width: 100vw;
+      top: 0px;
+      left: 0px;
+      transition: height 1000ms ease;
+      position: fixed;
+      z-index: 5;
+      background: #ffffff;
+      display: flex;
+      justify-content: flex-end;
+    `}
+`;
+
+const Styledlink = styled(Link)`
+  color: #ccc;
+`;
+
+// const StyledLink = styled(Link)`
+//   ${Wrapper} & {
+
+//   }
+// `;
 
 export default class Navigation extends Component {
+  state = {
+    show: false
+  };
+
   componentDidMount() {
     this.timer = setTimeout(() => {
-      this.node.classList.add(view_element_class);
-    }, 1000);
+      this.setState({
+        show: true
+      });
+    }, 6500);
   }
 
   componentWillUnmount() {
@@ -16,13 +51,11 @@ export default class Navigation extends Component {
 
   render() {
     return (
-      <div className="navigation" ref={node => (this.node = node)}>
-        <div>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/test">Test</Link>
-        </div>
-      </div>
+      <Wrapper show={this.state.show}>
+        <Styledlink to="/">Home</Styledlink>
+        <Styledlink to="/about">About</Styledlink>
+        <Styledlink to="/test">Test</Styledlink>
+      </Wrapper>
     );
   }
 }
