@@ -13,9 +13,9 @@ export default class Scroll extends Component {
 
   render() {
     return (
-      <div class="anim-arrow" ref={node => (this.node = node)}>
-        <div class="tri-1" />
-        <div class="tri-2" />
+      <div className="anim-arrow" ref={node => (this.node = node)}>
+        <div className="tri-1" />
+        <div className="tri-2" />
       </div>
     );
   }

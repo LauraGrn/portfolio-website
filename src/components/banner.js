@@ -89,7 +89,7 @@ export default class Banner extends Component {
   };
 
   onMouseEnterLeft = e => {
-    debugger;
+    // debugger;
     if (!this.state.firstAnimationFinished) return;
     this.setState({ leftHover: true });
     this.leftContainer.style.width = `70%`;
@@ -124,7 +124,7 @@ export default class Banner extends Component {
   };
 
   render() {
-    console.log({ state: this.state });
+    // console.log({ state: this.state });
     return (
       <Container>
         {!this.state.firstAnimationFinished && (
