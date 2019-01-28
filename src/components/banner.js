@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AnimatedCircle from "components/animatedCircle.js";
+import AnimatedCirclePath from "components/animatedCirclePath.js";
 import AnimatedPath from "components/animatedPath.js";
 import styled from "styled-components";
 import HeadingText from "components/headingText.js";
@@ -25,7 +25,7 @@ const Full = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: #ff6978;
+  background-color: #fb3968c;
   left: 0;
   z-index: 3;
 `;
@@ -38,7 +38,7 @@ const Left = styled.div`
   justify-content: center;
   width: 50%;
   height: 100vh;
-  background-color: #ff6978;
+  background-color: #fb3968c;
   left: 0;
   z-index: 2;
   overflow-x: hidden;
@@ -52,7 +52,7 @@ const Right = styled.div`
   justify-content: center;
   width: 50%;
   height: 100vh;
-  background-color: #f7ebe8;
+  background-color: #f8e5e5;
   right: 0;
   z-index: 1;
 `;
@@ -129,8 +129,8 @@ export default class Banner extends Component {
       <Container>
         {!this.state.firstAnimationFinished && (
           <Full ref={node => (this.fullContainer = node)}>
-            <AnimatedCircle />
-            <AnimatedPath />
+            <AnimatedCirclePath />
+            {/* <AnimatedPath /> */}
           </Full>
         )}
         <Left
@@ -145,7 +145,7 @@ export default class Banner extends Component {
             </Text>
           ) : (
             <HeadingText
-              fontSize={4}
+              fontSize={5}
               color={"#fff"}
               width={"30%"}
               display={"block"}
@@ -161,7 +161,7 @@ export default class Banner extends Component {
           ref={node => (this.rightContainer = node)}
         >
           {this.state.rightHover === false ? (
-            <HeadingText fontSize={4} color={"#fff"} width={"30%"}>
+            <HeadingText fontSize={5} color={"#fff"} width={"30%"}>
               A nice Heading
             </HeadingText>
           ) : null}

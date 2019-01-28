@@ -64,6 +64,11 @@
   background: #ffffff;
 } */
 
+.body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ebece6;
+}
+
 .hello {
   position: absolute;
   z-index: 7;
@@ -98,7 +103,7 @@
 
 h1 {
   line-height: 0.6;
-  font-family: "akzidenz-grotesk,sans-serif";
+  font-family: "Poppins", sans-serif;
   font-weight: 900;
   margin: 0px;
   text-transform: uppercase;
@@ -354,22 +359,23 @@ svg.go {
 
 /* SVG Path animation */
 
-path.automatic {
+/* path.automatic {
   stroke: #ff6978;
-  stroke-dasharray: 2863;
-  opacity: 10;
+  stroke-dasharray: 3142.03564453125;
+  opacity: 1;
   animation: dash 5s ease-in-out;
+  padding: 1px;
 }
 
 @keyframes dash {
   from {
-    stroke-dashoffset: 2863;
+    stroke-dashoffset: 3142.03564453125;
   }
 
   to {
     stroke-dashoffset: 0;
   }
-}
+} */
 .test-container {
   position: absolute;
   top: 45%;

@@ -6,6 +6,7 @@ const StyledText = styled.span`
   ${color};
   ${fontSize};
   ${width};
+  font-family: "Poppins", sans-serif;
 `;
 
 export default class HeadingText extends Component {

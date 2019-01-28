@@ -21,6 +21,7 @@ const StyledText = styled.span`
   ${alignItems};
   ${textAlign};
   ${space};
+  font-family: "Poppins", sans-serif;
 `;
 
 export default StyledText;
