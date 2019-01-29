@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ScrollAnimation from "react-animate-on-scroll";
+import SquiggleSvg from "components/svg/squiggleSvg.js";
+import ContentLeft from "components/contentLeft.js";
 
 const ContainerLeft = styled.div`
   display: flex;
@@ -10,10 +12,10 @@ const ContainerLeft = styled.div`
 `;
 
 const Box = styled.div`
-  width: 80%;
-  height: 100%;
+  width: 50%;
+  height: 83%;
   background-color: #ffffff;
-  margin-top: 50px;
+  border: dashed 1px #444140;
 `;
 
 export default class RevealLeft extends React.Component {
@@ -21,7 +23,10 @@ export default class RevealLeft extends React.Component {
     return (
       <ScrollAnimation animateIn="fadeIn" delay={500} animatePreScroll={false}>
         <ContainerLeft>
-          <Box />
+          <Box>
+            <ContentLeft />
+            <SquiggleSvg />
+          </Box>
         </ContainerLeft>
       </ScrollAnimation>
     );

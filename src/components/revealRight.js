@@ -12,7 +12,7 @@ const ContainerRight = styled.div`
 const Box = styled.div`
   width: 80%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #eae6e5;
   margin-top: 50px;
 `;
 

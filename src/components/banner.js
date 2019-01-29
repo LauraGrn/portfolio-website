@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import AnimatedCirclePath from "components/animatedCirclePath.js";
-import AnimatedPath from "components/animatedPath.js";
+// import AnimatedPath from "components/animatedPath.js";
 import styled from "styled-components";
 import HeadingText from "components/headingText.js";
-
 import Text from "components/text.js";
 
 const Container = styled.div`
@@ -25,7 +24,8 @@ const Full = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: #fb3968c;
+  background-color: #9a3d49;
+
   left: 0;
   z-index: 3;
 `;
@@ -38,7 +38,7 @@ const Left = styled.div`
   justify-content: center;
   width: 50%;
   height: 100vh;
-  background-color: #fb3968c;
+  background-color: #9a3d49;
   left: 0;
   z-index: 2;
   overflow-x: hidden;
@@ -81,7 +81,7 @@ export default class Banner extends Component {
 
   componentWillUnmount() {
     clearTimeout(this.timerOne);
-    clearTimeout(this.timerTwo);
+    // clearTimeout(this.timerTwo);
   }
 
   handleScroll = event => {

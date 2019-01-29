@@ -7,7 +7,9 @@ import {
   flex,
   alignItems,
   justifyContent,
-  space
+  space,
+  flexDirection,
+  flexWrap
 } from "styled-system";
 
 const TextWrapper = styled.div`
@@ -19,6 +21,8 @@ const TextWrapper = styled.div`
   ${alignItems};
   ${justifyContent};
   ${space};
+  ${flexDirection};
+  ${flexWrap};
 `;
 
 export default TextWrapper;

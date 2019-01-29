@@ -1,71 +1,124 @@
-// import React from "react";
-// import Content from "components/content.js";
-// import Foo from "components/foo.js";
+import React, { Component } from "react";
+import styled from "styled-components";
+import TextWrapper from "components/textWrapper.js";
+import StyledText from "components/text.js";
+import {
+  width,
+  height,
+  position,
+  top,
+  right,
+  bottom,
+  left,
+  color,
+  zIndex,
+  borders
+} from "styled-system";
 
-// let lastScrollY = 0;
+const Container = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background-color: #f7ebe8;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-color: #9a3d49;
+  top: 0;
+  z-index: 1;
+`;
 
-// //console.log(lastScrollY);
+const Border = styled.div`
+  ${position};
+  ${top};
+  ${width};
+  ${right};
+  ${bottom};
+  ${left};
+  ${height};
+  ${color};
+  ${zIndex};
+  ${borders};
+`;
 
-// export default class About extends React.Component {
-//   componentDidMount() {
-//     window.addEventListener("scroll", this.handleScroll);
-//     this.scrollY = window.scrollY;
-//   }
+export default class About extends Component {
+  componentDidMount() {
+    window.addEventListener("mousewheel", this.handleScroll);
+  }
 
-//   componentWillUnmount() {
-//     window.removeEventListener("scroll", this.handleScroll);
-//   }
+  handleScroll = event => {
+    event.preventDefault();
+  };
 
-//   banner = React.createRef();
-
-//   handleScroll = event => {
-//     lastScrollY = window.scrollY;
-//     console.log(lastScrollY);
-//     let box = document.querySelector(".scroll-container");
-//     let boxHeight = box.offsetHeight;
-
-//     // const isScrollingDown = scrollDelta > 0;
-//     // const isScrollingUp = scrollDelta < 0;
-//     // const hasScrolledPastFoo = true;
-//     // const hasScrolledPastFirstElement = true;
-
-//     //console.log(boxHeight);
-
-//     if (lastScrollY <= 20) {
-//       // if you scrolled more than(40px) then jump to next elementc- scrollIntoView
-//       //this.scrollY = lastScrollY;
-//       //this.banner.current.style.left = `${boxWidth + lastScrollY}px`;
-//       this.banner.current.style.left = `${lastScrollY}px`;
-//       this.banner.current.style.top = `${lastScrollY}px`;
-//       this.outerContainer.style.height = `${boxHeight + lastScrollY}px`;
-//     } else if (lastScrollY <= 80) {
-//       this.banner.current.style.left = `50%`;
-//       this.banner.current.style.top = `${lastScrollY}px`;
-//     } else {
-//       // if (!hasScrolledPastFoo) {
-//         // document.querySelector(".foo").scrollIntoView({ block: "end" });
-//       }
-
-//       //this.outerContainer.style.height = `20%`;
-//       //this.outerContainer.style.transition = `height 2000ms ease`;
-//     }
-//   };
-
-//   render()
-//     return (
-//       <React.Fragment>
-//         <div
-//           className="scroll-container"
-//           ref={node => (this.outerContainer = node)}
-//         >
-//           <div className="static-left" />
-//           <Content innerRef={this.banner} />
-//         </div>
-//         <Foo />
-//       </React.Fragment>
-//     );
-
-// }
-
-// <HorParralax><Hello /></HorParralax>/
-// this.root.firstChild
+  render() {
+    return (
+      <Container>
+        <TextWrapper
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          width="100%"
+          height="80%"
+          m="10%"
+          flexDirection="column"
+        >
+          <StyledText color="#ffffff" fontSize={6} textAlign="left">
+            ABOUT ME
+          </StyledText>
+          <StyledText color="#ffffff" fontSize={4} textAlign="center">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt.
+            <br />
+            <br /> Sed ut perspiciatis unde omnis iste natus error sit
+            voluptatem accusantium doloremque laudantium, totam rem aperiam,
+            eaque ipsa quae ab illo inventore veritatis et quasi architecto
+            beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+            voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+            magni dolores eos qui ratione voluptatem sequi nesciunt.
+          </StyledText>
+        </TextWrapper>
+        <Border
+          position="absolute"
+          top="0"
+          left="0"
+          width="30px"
+          bg="#ffffff"
+          height="100%"
+          zIndex="2"
+        />
+        <Border
+          position="absolute"
+          bottom="0"
+          left="0"
+          width="100%"
+          bg="#ffffff"
+          height="30px"
+          zIndex="2"
+        />
+        <Border
+          position="absolute"
+          top="0"
+          left="0"
+          width="100%"
+          bg="#ffffff"
+          height="30px"
+          zIndex="2"
+        />
+        <Border
+          position="absolute"
+          top="0"
+          right="0"
+          width="30px"
+          bg="#ffffff"
+          height="100%"
+          zIndex="2"
+        />
+      </Container>
+    );
+  }
+}

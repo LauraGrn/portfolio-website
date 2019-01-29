@@ -64,9 +64,31 @@
   background: #ffffff;
 } */
 
-.body {
-  font-family: "Poppins", sans-serif;
-  background-color: #ebece6;
+.squiggle {
+  animation: squigglevision 0.3s infinite;
+  z-index: 30;
+}
+
+/**
+ * from: https://tympanus.net/codrops/2016/03/21/animated-animals-css-svg/
+ */
+@keyframes squigglevision {
+  0% {
+    filter: url("#squiggly-0");
+  }
+
+  25% {
+    filter: url("#squiggly-1");
+  }
+  50% {
+    filter: url("#squiggly-2");
+  }
+  75% {
+    filter: url("#squiggly-3");
+  }
+  100% {
+    filter: url("#squiggly-4");
+  }
 }
 
 .hello {

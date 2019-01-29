@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-const add_go = "go";
+// const add_go = "go";
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,7 +25,6 @@ const StyledPath = styled.path`
   opacity: 1;
   animation: ${props => (props.myPathLength ? dash(props) : null)} 5s
     ease-in-out;
-  padding: 1px;
 `;
 
 const dash = props => keyframes` {
@@ -77,7 +76,7 @@ export default class AnimatedCirclePath extends React.Component {
             fill="none"
             d="M1,501a500,500 0 1,0 1000,0a500,500 0 1,0 -1000,0"
             ref={node => (this.path = node)}
-            strokeWidth="4"
+            strokeWidth="2"
             myPathLength={this.state.pathlength}
           />
         </Svg>
