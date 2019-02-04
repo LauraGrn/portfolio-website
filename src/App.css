@@ -1,69 +1,3 @@
-/* .banner_container {
-  top: 0px;
-  left: 0px;
-  height: 100vh;
-  width: 100vw;
-  background-color: #f7ebe8;
-  z-index: 1;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-} */
-/* 
-.banner {
-  background: #ff6978;
-  height: 100vh;
-  width: 100%;
-}
-
-.banner-right {
-  height: 100vh;
-  width: 0%;
-  background-color: #f7ebe8;
-}
-
-.banner-right.loaded {
-  height: 100vh;
-  width: 50%;
-  background-color: #f7ebe8;
-  transition: border 1000ms ease, width 1500ms ease;
-}
-
-.banner.loaded {
-  background: #ff6978;
-  height: 100vh;
-  width: 50%;
-  transition: border 1000ms ease, width 1500ms ease;
-} */
-
-/* const Wrapper = styled.div`
-  height: 0px;
-  overflow: hidden;
-
-  ${props => props.show && css`
-    // Only if it's showing
-  `}
-
-  // li {
-
-  // }
-`; */
-/* .navigation {
-  height: 0px;
-  overflow: hidden;
-}
-
-.navigation.show {
-  height: 3%;
-  width: 100vw;
-  top: 0px;
-  left: 0px;
-  transition: height 1000ms ease;
-  position: fixed;
-  z-index: 3;
-  background: #ffffff;
-} */
-
 .squiggle {
   animation: squigglevision 0.3s infinite;
   z-index: 30;
@@ -91,6 +25,8 @@
   }
 }
 
+/* Hello animation */
+
 .hello {
   position: absolute;
   z-index: 7;
@@ -99,12 +35,6 @@
   display: inline;
 }
 
-.hellotwo {
-  position: absolute;
-  z-index: 7;
-
-  display: inline;
-}
 @media (min-width: 1600px) {
   .hello h1 {
     font-size: 22rem;
@@ -121,25 +51,6 @@
   .hello h1 {
     margin-top: 0px;
   }
-}
-
-h1 {
-  line-height: 0.6;
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  margin: 0px;
-  text-transform: uppercase;
-  font-size: 8rem;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-svg {
-  display: block;
 }
 
 .line {
@@ -188,50 +99,9 @@ svg {
     opacity 250ms linear 0ms;
 }
 
-.future {
-  /* margin-top: 200vh; */
-  transform: matrix3d(
-    0.984724,
-    -0.0772946,
-    0.156026,
-    0,
-    0.078253,
-    0.996934,
-    0,
-    0,
-    -0.155548,
-    0.0122095,
-    0.987753,
-    0,
-    0,
-    0,
-    0,
-    1
-  );
-  z-index: 20;
-}
-
 .hello-container {
   position: fixed;
   background: transparent;
-}
-
-.test {
-  top: 30vh;
-  left: 20px;
-  height: 150px;
-  width: 150px;
-  background-color: hsl(135, 100%, 66%);
-  position: absolute;
-  margin-top: 20px;
-}
-
-.element-move-horizontal_container {
-  max-width: 1000px;
-  background-color: #ef6487;
-  position: relative;
-  min-height: 70vh;
-  z-index: 10;
 }
 
 .scrolling-wrapper {
@@ -312,13 +182,6 @@ svg {
   overflow: hidden;
 }
 
-.foo {
-  display: block;
-  width: 100vh;
-  height: 100vh;
-  background-color: #c68866;
-}
-
 /* SVG learning Text animation */
 
 .svg-wrapper {
@@ -381,7 +244,7 @@ svg.go {
 
 /* SVG Path animation */
 
-/* path.automatic {
+path.automatic {
   stroke: #ff6978;
   stroke-dasharray: 3142.03564453125;
   opacity: 1;
@@ -397,14 +260,14 @@ svg.go {
   to {
     stroke-dashoffset: 0;
   }
-} */
+}
 .test-container {
   position: absolute;
   top: 45%;
   left: 50%;
 }
 
-/* Scroll down animation */
+/* Animated scroll arrow */
 
 .anim-arrow {
   bottom: 40px;
@@ -463,46 +326,12 @@ svg.go {
   }
 }
 
-/* test */
-
-.ufo {
-  width: 500px;
-  height: 500px;
+/* Remove button styling */
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
   cursor: pointer;
-  border: solid 1px black;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.eyes {
-  width: 3px;
-  height: 500px;
-  background: linear-gradient(purple, orange);
-}
-
-.swing_container {
-  top: 0px;
-  left: 0px;
-  height: 100vh;
-  width: 100vw;
-  background-color: #f7ebe8;
-  z-index: 1;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-}
-
-.swingloaded {
-  background: #ff6978;
-  height: 100vh;
-  width: 50%;
-  transition: border 1000ms ease, width 1500ms ease;
-}
-
-.swing-rightloaded {
-  height: 100vh;
-  width: 50%;
-  background-color: #f7ebe8;
-  transition: border 1000ms ease, width 1500ms ease;
 }

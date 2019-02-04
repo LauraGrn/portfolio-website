@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AnimatedCirclePath from "components/animatedCirclePath.js";
-// import AnimatedPath from "components/animatedPath.js";
+import AnimatedPath from "components/animatedPath.js";
 import styled from "styled-components";
 import HeadingText from "components/headingText.js";
 import Text from "components/text.js";
@@ -8,7 +8,7 @@ import Text from "components/text.js";
 const Container = styled.div`
   height: 100vh;
   width: auto;
-  background-color: #f7ebe8;
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -24,7 +24,7 @@ const Full = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: #9a3d49;
+  background-color: #a8763e;
 
   left: 0;
   z-index: 3;
@@ -38,7 +38,7 @@ const Left = styled.div`
   justify-content: center;
   width: 50%;
   height: 100vh;
-  background-color: #9a3d49;
+  background-color: #a8763e;
   left: 0;
   z-index: 2;
   overflow-x: hidden;
@@ -52,7 +52,7 @@ const Right = styled.div`
   justify-content: center;
   width: 50%;
   height: 100vh;
-  background-color: #f8e5e5;
+  background-color: #ffffff;
   right: 0;
   z-index: 1;
 `;
@@ -61,7 +61,7 @@ export default class Banner extends Component {
   state = {
     leftHover: false,
     rightHover: false,
-    firstAnimationFinished: false
+    firstAnimationFinished: this.props.homeAnimation
   };
 
   componentDidMount() {
@@ -69,19 +69,22 @@ export default class Banner extends Component {
 
     this.timerOne = setTimeout(() => {
       window.removeEventListener("mousewheel", this.handleScroll);
-      this.fullContainer.style.width = `50%`;
-      this.fullContainer.style.opacity = `0`;
-      this.fullContainer.style.transition = `width 1500ms ease, opacity 3000ms ease`;
+      if (this.fullContainer) {
+        this.fullContainer.style.width = `50%`;
+        this.fullContainer.style.opacity = `0`;
+        this.fullContainer.style.transition = `width 1500ms ease, opacity 3000ms ease`;
+      }
     }, 5000);
 
     this.timerTwo = setTimeout(() => {
       this.setState({ firstAnimationFinished: true });
+      this.props.updateHomeAnimation();
     }, 8000);
   }
 
   componentWillUnmount() {
     clearTimeout(this.timerOne);
-    // clearTimeout(this.timerTwo);
+    clearTimeout(this.timerTwo);
   }
 
   handleScroll = event => {
@@ -130,7 +133,6 @@ export default class Banner extends Component {
         {!this.state.firstAnimationFinished && (
           <Full ref={node => (this.fullContainer = node)}>
             <AnimatedCirclePath />
-            {/* <AnimatedPath /> */}
           </Full>
         )}
         <Left
@@ -139,19 +141,22 @@ export default class Banner extends Component {
           ref={node => (this.leftContainer = node)}
         >
           {this.state.leftHover ? (
-            <Text fontSize={3} color={"#fff"} width={"300px"}>
-              Fed up with Lorem Ipsum? Yes! I'd rather have some placeholder
-              text about...
-            </Text>
+            <div>
+              <Text fontSize={3} color={"#fff"} width={"350px"}>
+                Fed up with Lorem Ipsum? Yes! I'd rather have some placeholder
+                text about...
+              </Text>
+              <AnimatedPath />
+            </div>
           ) : (
             <HeadingText
               fontSize={5}
-              color={"#fff"}
+              color={"#2B2118"}
               width={"30%"}
               display={"block"}
               height={"100px"}
             >
-              A nice Heading
+              Product Manager
             </HeadingText>
           )}
         </Left>
@@ -161,15 +166,18 @@ export default class Banner extends Component {
           ref={node => (this.rightContainer = node)}
         >
           {this.state.rightHover === false ? (
-            <HeadingText fontSize={5} color={"#fff"} width={"30%"}>
-              A nice Heading
+            <HeadingText fontSize={5} color={"#2B2118"} width={"30%"}>
+              Creative Developer
             </HeadingText>
           ) : null}
           {this.state.rightHover ? (
-            <Text fontSize={3} color={"#fff"} width={"30%"}>
-              Fed up with Lorem Ipsum? Yes! I'd rather have some placeholder
-              text about...
-            </Text>
+            <div width={"350px"}>
+              <Text fontSize={3} color={"#2B2118"} width={"350px"}>
+                Fed up with Lorem Ipsum? Yes! I'd rather have some placeholder
+                text about...
+              </Text>
+              <AnimatedPath />
+            </div>
           ) : null}
         </Right>
       </Container>

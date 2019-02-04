@@ -3,21 +3,38 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "App.css";
 import Home from "components/home";
 import About from "components/about";
-import Test from "components/test";
+import Contact from "components/contact";
 import Pose from "components/pose";
-// import Navigation from "components/nav";
+import Navigation from "components/nav";
+import Test from "components/test";
 
 class App extends Component {
+  state = { homeAnimation: false };
+
+  updateHomeAnimation = () => {
+    this.setState({ homeAnimation: true });
+  };
+
   render() {
     return (
       <BrowserRouter>
         <div>
-          {/* <Navigation /> */}
+          <Navigation />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <Home
+                  homeAnimation={this.state.homeAnimation}
+                  updateHomeAnimation={this.updateHomeAnimation}
+                />
+              )}
+            />
             <Route exact path="/about" component={About} />
-            <Route exact path="/test" component={Test} />
+            <Route exact path="/contact" component={Contact} />
             <Route exact path="/pose" component={Pose} />
+            <Route exact path="/test" component={Test} />
           </Switch>
         </div>
       </BrowserRouter>

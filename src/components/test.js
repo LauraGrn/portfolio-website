@@ -1,27 +1,22 @@
 import React from "react";
-import ContentLeft from "components/contentLeft.js";
-import ContentRight from "components/contentRight.js";
-import RevealLeft from "components/revealLeft.js";
+import Skills from "components/skills.js";
 import RevealRight from "components/revealRight.js";
-import StyledSplitText from "components/splitText.js";
 
 export default class Test extends React.Component {
   render() {
     return (
       <div>
-        <StyledSplitText />
-        <ContentLeft />
-        {/* <AnimatedCircle /> */}
-        <RevealLeft />
-        <ContentRight />
-        {/* <AnimatedCircle /> */}
+        <Skills />
+
+        {/* <ContentRight /> */}
+
         <RevealRight />
 
-        <ContentLeft />
-        {/* <AnimatedCircle /> */}
-        <RevealLeft />
-        <ContentRight />
-        {/* <AnimatedCircle /> */}
+        {/* <ContentLeft /> */}
+
+        <Skills />
+        {/* <ContentRight /> */}
+
         <RevealRight />
       </div>
     );

@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import posed from "react-pose";
+import { tween } from "popmotion";
 import Dots from "components/svg/dots.js";
 import { matchPath, withRouter } from "react-router";
 
@@ -10,23 +11,21 @@ const Wrapper = styled.div`
   width: 100vw;
 
   top: 0px;
-  right: 0px;
-  z-index: 4;
+  left: 0px;
+
   position: fixed;
+  z-index: 5;
 `;
 
 const StyledButton = styled.button`
-  width: 80px;
-  height: 80px;
-  position: relative;
+  width: 64px;
+  height: 64px;
+  right: 0;
+  position: absolute;
   top:0;
   color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  
-  
+
+
   svg {
     background: transparent;
   }
@@ -59,7 +58,7 @@ const Styleditem = styled.div`
 const Background = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 64px;
   height: 64px;
   background: white;
@@ -69,12 +68,10 @@ const Background = styled.div`
 
 const Container = styled.div`
   display: flex;
-  flex-direction: ${props => (props.isOpen ? "row-reverse" : "row")};
-  justify-content: space-between;
-`;
+  align-items: flex-start;
 
-const StyledItems = styled.div`
-  margin: 5%;
+  height: 100%;
+  flex-direction: column;
 `;
 
 const SideBar = posed(Wrapper)({
@@ -89,7 +86,7 @@ const SideBar = posed(Wrapper)({
     }
   },
   closed: {
-    x: "calc(100% - 80px)",
+    x: "calc(-100% + 80px)",
     delay: 0,
     transition: {
       x: { ease: "easeOut", duration: 200 },
@@ -200,27 +197,21 @@ class Navigation extends Component {
     }
 
     return (
-      <SideBar className="sidebar" pose={isOpen ? "open" : "closed"}>
-        <PosedBackground
-          className="posebackground"
-          pose={isOpen ? "open" : "closed"}
-        />
-        <Container style={{ position: "relative" }} isOpen={isOpen}>
+      <SideBar pose={isOpen ? "open" : "closed"}>
+        <PosedBackground pose={isOpen ? "open" : "closed"} />
+        <Container style={{ position: "relative" }}>
           <StyledButton onClick={this.toggle}>
             {isOpen ? "X" : <Dots />}
           </StyledButton>
-
-          <StyledItems>
-            <Item className="item1">
-              <Link to="/">Home</Link>
-            </Item>
-            <Item className="item2">
-              <Link to="/about">About</Link>
-            </Item>
-            <Item className="item3">
-              <Link to="/contact">Contact</Link>
-            </Item>
-          </StyledItems>
+          <Item>
+            <Link to="/">Home</Link>
+          </Item>
+          <Item>
+            <Link to="/about">About</Link>
+          </Item>
+          <Item>
+            <Link to="/contact">Contact</Link>
+          </Item>
         </Container>
       </SideBar>
     );

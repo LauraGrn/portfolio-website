@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import TextWrapper from "components/textWrapper.js";
 import StyledText from "components/text.js";
-import {
-  width,
-  height,
-  position,
-  top,
-  right,
-  bottom,
-  left,
-  color,
-  zIndex,
-  borders
-} from "styled-system";
+// import {
+//   width,
+//   height,
+//   position,
+//   top,
+//   right,
+//   bottom,
+//   left,
+//   color,
+//   zIndex,
+//   borders
+// } from "styled-system";
 
 const Container = styled.div`
   height: 100vh;
@@ -29,18 +29,18 @@ const Container = styled.div`
   z-index: 1;
 `;
 
-const Border = styled.div`
-  ${position};
-  ${top};
-  ${width};
-  ${right};
-  ${bottom};
-  ${left};
-  ${height};
-  ${color};
-  ${zIndex};
-  ${borders};
-`;
+// const Border = styled.div`
+//   ${position};
+//   ${top};
+//   ${width};
+//   ${right};
+//   ${bottom};
+//   ${left};
+//   ${height};
+//   ${color};
+//   ${zIndex};
+//   ${borders};
+// `;
 
 export default class About extends Component {
   componentDidMount() {
@@ -82,7 +82,7 @@ export default class About extends Component {
             magni dolores eos qui ratione voluptatem sequi nesciunt.
           </StyledText>
         </TextWrapper>
-        <Border
+        {/* <Border
           position="absolute"
           top="0"
           left="0"
@@ -117,7 +117,7 @@ export default class About extends Component {
           bg="#ffffff"
           height="100%"
           zIndex="2"
-        />
+        /> */}
       </Container>
     );
   }

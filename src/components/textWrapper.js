@@ -9,7 +9,9 @@ import {
   justifyContent,
   space,
   flexDirection,
-  flexWrap
+  overflow,
+  top,
+  zIndex
 } from "styled-system";
 
 const TextWrapper = styled.div`
@@ -22,7 +24,9 @@ const TextWrapper = styled.div`
   ${justifyContent};
   ${space};
   ${flexDirection};
-  ${flexWrap};
+  ${overflow};
+  ${top};
+  ${zIndex};
 `;
 
 export default TextWrapper;

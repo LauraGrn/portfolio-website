@@ -12,7 +12,10 @@ export default class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <Banner />
+        <Banner
+          homeAnimation={this.props.homeAnimation}
+          updateHomeAnimation={this.props.updateHomeAnimation}
+        />
 
         <Scroll />
         <Test />
